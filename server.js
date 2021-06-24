@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+require('dotenv').config()
 
 var corOptions  = {
     origin:true
@@ -65,7 +66,6 @@ initial()
 
 
 require('./routes/auth.routes')(app);
-require('./routes/todos.routes')(app);
 require('./routes/news.routes.js')(app)
 
 app.get("/", (req, res) => {
